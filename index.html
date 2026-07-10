@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Jimmy </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ شاشة الدخول (لازمة حتى يسمح المتصفح بتشغيل الصوت) ============ -->
+  <div id="gate">
+    <div class="gate-moon"></div>
+    <p class="gate-eyebrow">a night, a howl, a birthday</p>
+    <h1 class="gate-title">Alpha Wolf</h1>
+    <button id="enterBtn" class="enter-btn">Enter the Night</button>
+    
+  </div>
+
+  <!-- ============ المسرح الرئيسي ============ -->
+  <main id="stage" aria-hidden="true">
+
+    <!-- خلفية دائمة: سديم + نجوم + قمر -->
+    <div class="sky">
+      <div class="stars" id="stars"></div>
+      <div class="moon" id="moon"></div>
+      <div class="fog fog-1"></div>
+      <div class="fog fog-2"></div>
+    </div>
+
+    <!-- المشهد الأول: صورة الذئاب مع تهنئة العيد -->
+    <section class="scene" id="scene-1">
+      <img src="assets/images/wolf-birthday.jpeg" alt="Happy Birthday Jimmy from Alpha Wolf" class="scene-img">
+    </section>
+
+    <!-- المشهد الثاني: صورة الشخص (تُفتح كإطار ذهبي عند الضغط) -->
+    <section class="scene" id="scene-2">
+      <button class="portrait-frame" id="portraitBtn" aria-label="اضغط لعرض رسالة العيد">
+        <img src="assets/images/portrait-twentynine.jpeg" alt="Jimmy — Twenty Nine" class="scene-img portrait-img">
+      </button>
+
+      <div class="title-block" id="titleBlock">
+        <p class="title-line line-1">Happy Birthday, Jimmy</p>
+        <p class="title-line line-2">From Alpha Wolf <span class="paw-emoji">🐾</span></p>
+        <p class="title-line line-3">Twenty&nbsp;Nine</p>
+      </div>
+
+     
+    </section>
+
+    
+    <!-- زر الموسيقى المفضّلة -->
+    <button id="musicBtn" class="music-btn">🎵 Play Favorite Song</button>
+
+    <!-- بتلات الورد المتساقطة -->
+    <div class="petals" id="petals"></div>
+
+    <!-- مسار آثار أقدام الذئب (العنصر المميّز للتصميم) -->
+    <div class="paw-trail" id="pawTrail"></div>
+
+  </main>
+
+  <!-- ============ نافذة الرسالة الذهبية ============ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-frame">
+      <p class="modal-text">
+        Happy 29th Birthday, Jimmy.<br>
+        May your path always be as fearless<br>
+        as the Alpha Wolf. 🐺
+      </p>
+      <div class="modal-paw">🐾</div>
+      <button class="modal-close" id="modalClose">close</button>
+    </div>
+  </div>
+
+  <!-- ============ عناصر الصوت — ضع ملفاتك هنا بنفس الأسماء ============ -->
+  <!--
+    ضع ملفات الصوت داخل: assets/audio/
+    بنفس هذه الأسماء بالضبط (أو غيّر المسار بالأسفل ليطابق ملفاتك):
+      - assets/audio/wind.mp3      → صوت رياح ليلية (loop)
+      - assets/audio/howl.mp3      → عواء ذئب (يشتغل مرة واحدة عند الدخول)
+      - assets/audio/forest.mp3    → أصوات غابة خفيفة (loop)
+      - assets/audio/ambient.mp3   → موسيقى هادئة خفيفة تصاحب المشهد (loop)
+      - assets/audio/favorite.mp3  → الأغنية المفضلة (تشتغل عند الضغط على الزر)
+  -->
+  <audio id="sfxWind"    src="assets/audio/wind.mp3"    loop preload="auto"></audio>
+  <audio id="sfxHowl"    src="assets/audio/howl.mp3"    preload="auto"></audio>
+  <audio id="sfxForest"  src="assets/audio/forest.mp3"  loop preload="auto"></audio>
+  <audio id="sfxAmbient" src="assets/audio/ambient.mp3" loop preload="auto"></audio>
+  <audio id="musicFav"   src="assets/audio/favorite.mp3" loop preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
